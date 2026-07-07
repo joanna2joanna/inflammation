@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>抗炎笔记 · 47期分类索引</title>
+<style>
+  html { scroll-behavior:smooth; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  :root {
+    --bg:#192D4A; --card:#223958; --gold:#D4A853; --text:#EDF1F7; --muted:#98A9BE; --divider:#2E4565;
+    --skin:#C78A8A; --joint:#8AB89A; --brain:#8AA8C7; --gut:#C7B08A; --immune:#B08AC7; --face:#8AC7BF; --hormone:#C78AB5;
+  }
+  body {
+    background:var(--bg); color:var(--text);
+    font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    padding:40px 20px 60px;
+  }
+  .top-bar { width:100%; height:4px; background:linear-gradient(90deg,var(--gold),#2A4A7A); position:fixed; top:0; left:0; z-index:10; }
+  .wrap { max-width:900px; margin:0 auto; }
+  h1 { text-align:center; font-size:56px; font-weight:900; color:var(--gold); letter-spacing:4px; margin:40px 0 8px; }
+  .sub { text-align:center; font-size:22px; color:var(--muted); margin-bottom:36px; }
+
+  .legend { display:flex; flex-wrap:wrap; gap:10px 24px; justify-content:center; margin-bottom:44px; }
+  .legend a { text-decoration:none; display:flex; align-items:center; gap:6px; font-size:17px; color:var(--muted); }
+  .legend a:hover { color:var(--text); }
+  .legend .dot { width:12px; height:12px; border-radius:3px; flex-shrink:0; }
+
+  .cat { margin-bottom:32px; scroll-margin-top:50px; }
+  .cat-header { display:flex; align-items:center; gap:14px; margin-bottom:14px; }
+  .cat-header .dot { width:16px; height:16px; border-radius:4px; flex-shrink:0; }
+  .cat-header h2 { font-size:26px; font-weight:800; }
+  .cat-header .count { font-size:17px; color:var(--muted); font-weight:400; }
+
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:10px; }
+  .card {
+    display:block; background:var(--card); border-radius:12px; padding:16px 20px;
+    text-decoration:none; transition:background .15s;
+    border-left:3px solid transparent;
+  }
+  .card:hover { background:#2a4568; }
+  .card .num { font-size:13px; color:var(--muted); margin-bottom:4px; }
+  .card .title { font-size:20px; font-weight:700; color:var(--text); margin-bottom:4px; text-wrap:pretty; }
+  .card .hook { font-size:15px; color:var(--muted); line-height:1.5; text-wrap:pretty; }
+
+  .footer { text-align:center; margin-top:60px; padding-top:24px; border-top:2px solid var(--divider); }
+  .footer .brand { font-size:20px; font-weight:800; color:#708098; letter-spacing:4px; }
+  .footer .note { font-size:14px; color:#506580; margin-top:6px; }
+</style>
+</head>
+<body>
+<div class="top-bar"></div>
+<div class="wrap">
+  <h1>抗炎笔记</h1>
+  <p class="sub">47 期 · 按身体系统分类复习</p>
+
+  <div class="legend">
+    <a href="#cat-skin"><span class="dot" style="background:var(--skin)"></span>皮肤与屏障</a>
+    <a href="#cat-joint"><span class="dot" style="background:var(--joint)"></span>关节与筋膜</a>
+    <a href="#cat-brain"><span class="dot" style="background:var(--brain)"></span>大脑与神经</a>
+    <a href="#cat-gut"><span class="dot" style="background:var(--gut)"></span>消化与代谢</a>
+    <a href="#cat-immune"><span class="dot" style="background:var(--immune)"></span>免疫与过敏</a>
+    <a href="#cat-face"><span class="dot" style="background:var(--face)"></span>五官</a>
+    <a href="#cat-hormone"><span class="dot" style="background:var(--hormone)"></span>激素与情绪</a>
+  </div>
+
+  <!-- 皮肤与屏障 -->
+  <div class="cat" id="cat-skin">
+    <div class="cat-header"><span class="dot" style="background:var(--skin)"></span><h2>皮肤与屏障</h2><span class="count">10 期</span></div>
+    <div class="grid">
+      <a class="card" style="border-left-color:var(--skin)" href="issues/issue-13.html"><div class="num">#13</div><div class="title">夏天脸油能炒菜</div><div class="hook">不是脸脏，是皮脂腺被炎症喊去加班了</div></a>
+      <a class="card" style="border-left-color:var(--skin)" href="issues/issue-15.html"><div class="num">#15</div><div class="title">一痒就停不下来</div><div class="hook">不是皮肤出了毛病，是你的肠子在求救</div></a>
+      <a class="card" style="border-left-color:var(--skin)" href="issues/issue-21.html"><div class="num">#21</div><div class="title">一吃甜食就爆痘</div><div class="hook">不是甜食有毒，是炎症把皮脂腺逼疯了</div></a>
+      <a class="card" style="border-left-color:var(--skin)" href="issues/issue-23.html"><div class="num">#23</div><div class="title">指甲竖纹又分层</div><div class="hook">不是你缺钙，是指甲的建材厂原料断档了</div></a>
+      <a class="card" style="border-left-color:var(--skin)" href="issues/issue-27.html"><div class="num">#27</div><div class="title">头发一天就油了</div><div class="hook">不是洗发水不行，是湿热把你头皮榨出油了</div></a>
+      <a class="card" style="border-left-color:var(--skin)" href="issues/issue-30.html"><div class="num">#30</div><div class="title">防晒擦了脸还黄</div><div class="hook">怪错防晒霜了，是你脸上的油被烤黄了</div></a>
+      <a class="card" style="border-left-color:var(--skin)" href="issues/issue-33.html"><div class="num">#33</div><div class="title">没碰啥就起风团</div><div class="hook">问题不在过敏源，在肥大细胞失控</div></a>
+      <a class="card" style="border-left-color:var(--skin)" href="issues/issue-35.html"><div class="num">#35</div><div class="title">嘴唇干裂老不好</div><div class="hook">嘴唇总裂，是屏障在发炎</div></a>
+      <a class="card" style="border-left-color:var(--skin)" href="issues/issue-37.html"><div class="num">#37</div><div class="title">疤痕赖着不走</div><div class="hook">疤痕不退，是炎症没散完</div></a>
+      <a class="card" style="border-left-color:var(--skin)" href="issues/issue-41.html"><div class="num">#41</div><div class="title">越练湿疹越凶</div><div class="hook">不是汗腌的，是免疫太累管不住皮肤了</div></a>
+    </div>
+  </div>
+
+  <!-- 关节、肌肉与筋膜 -->
+  <div class="cat" id="cat-joint">
+    <div class="cat-header"><span class="dot" style="background:var(--joint)"></span><h2>关节、肌肉与筋膜</h2><span class="count">8 期</span></div>
+    <div class="grid">
+      <a class="card" style="border-left-color:var(--joint)" href="issues/issue-02.html"><div class="num">#2</div><div class="title">越运动越累</div><div class="hook">不是你体能差，是练过头了</div></a>
+      <a class="card" style="border-left-color:var(--joint)" href="issues/issue-05.html"><div class="num">#5</div><div class="title">下雨膝盖痛</div><div class="hook">不是老寒腿，是气压在捣鬼</div></a>
+      <a class="card" style="border-left-color:var(--joint)" href="issues/issue-32.html"><div class="num">#32</div><div class="title">肉越来越松没劲</div><div class="hook">岁数是背景，炎症才是拆肌肉的手</div></a>
+      <a class="card" style="border-left-color:var(--joint)" href="issues/issue-34.html"><div class="num">#34</div><div class="title">脚后跟落地就疼</div><div class="hook">脚后跟痛，问题不在骨头在筋膜</div></a>
+      <a class="card" style="border-left-color:var(--joint)" href="issues/issue-36.html"><div class="num">#36</div><div class="title">老伤变天气预报</div><div class="hook">旧伤阴天疼，是炎症没消完</div></a>
+      <a class="card" style="border-left-color:var(--joint)" href="issues/issue-40.html"><div class="num">#40</div><div class="title">早上起来浑身僵</div><div class="hook">不是着凉了，是强直在发炎</div></a>
+      <a class="card" style="border-left-color:var(--joint)" href="issues/issue-42.html"><div class="num">#42</div><div class="title">蹲下膝盖嘎嘣响</div><div class="hook">不是缺钙老了，是炎症把滑液弄干了</div></a>
+      <a class="card" style="border-left-color:var(--joint)" href="issues/issue-43.html"><div class="num">#43</div><div class="title">肩颈硬块推不动</div><div class="hook">不是坐太久了，是炎症把筋膜焊住了</div></a>
+    </div>
+  </div>
+
+  <!-- 大脑与神经 -->
+  <div class="cat" id="cat-brain">
+    <div class="cat-header"><span class="dot" style="background:var(--brain)"></span><h2>大脑与神经</h2><span class="count">8 期</span></div>
+    <div class="grid">
+      <a class="card" style="border-left-color:var(--brain)" href="issues/issue-01.html"><div class="num">#1</div><div class="title">饭后困到崩溃</div><div class="hook">别怪自己懒，怪这顿饭</div></a>
+      <a class="card" style="border-left-color:var(--brain)" href="issues/issue-03.html"><div class="num">#3</div><div class="title">躺下脑子不关机</div><div class="hook">不是缺觉，是身体忘了怎么放松</div></a>
+      <a class="card" style="border-left-color:var(--brain)" href="issues/issue-04.html"><div class="num">#4</div><div class="title">醒了但没完全醒</div><div class="hook">别急，大脑在倒时差</div></a>
+      <a class="card" style="border-left-color:var(--brain)" href="issues/issue-14.html"><div class="num">#14</div><div class="title">脑子一团浆糊</div><div class="hook">不是老了记性差，是炎症拖慢了你的大脑</div></a>
+      <a class="card" style="border-left-color:var(--brain)" href="issues/issue-17.html"><div class="num">#17</div><div class="title">身子困脑子醒</div><div class="hook">不是不困，是身体忘了怎么切换到睡眠</div></a>
+      <a class="card" style="border-left-color:var(--brain)" href="issues/issue-28.html"><div class="num">#28</div><div class="title">咖啡越喝越困</div><div class="hook">不是喝少了，是咖啡因把你的清醒提前透支了</div></a>
+      <a class="card" style="border-left-color:var(--brain)" href="issues/issue-45.html"><div class="num">#45</div><div class="title">躺下脑子还在跑</div><div class="hook">不是你胡思乱想，是脑子的炎症没消</div></a>
+      <a class="card" style="border-left-color:var(--brain)" href="issues/issue-46.html"><div class="num">#46</div><div class="title">话到嘴边就忘了</div><div class="hook">不是你老了，脑子在发炎</div></a>
+    </div>
+  </div>
+
+  <!-- 消化与代谢 -->
+  <div class="cat" id="cat-gut">
+    <div class="cat-header"><span class="dot" style="background:var(--gut)"></span><h2>消化与代谢</h2><span class="count">10 期</span></div>
+    <div class="grid">
+      <a class="card" style="border-left-color:var(--gut)" href="issues/issue-06.html"><div class="num">#6</div><div class="title">一吃就胀还反酸</div><div class="hook">不是胃坏了，是你吃饭时少做了一个动作</div></a>
+      <a class="card" style="border-left-color:var(--gut)" href="issues/issue-08.html"><div class="num">#8</div><div class="title">肠道总爱闹罢工</div><div class="hook">不是水喝少了，是肠子懒得动了</div></a>
+      <a class="card" style="border-left-color:var(--gut)" href="issues/issue-10.html"><div class="num">#10</div><div class="title">喝凉水也会长胖</div><div class="hook">不是吃太多了，是炎症让脂肪关不掉</div></a>
+      <a class="card" style="border-left-color:var(--gut)" href="issues/issue-12.html"><div class="num">#12</div><div class="title">天一热就没胃口</div><div class="hook">不是天热矫情，是暑湿把脾胃泡蔫了</div></a>
+      <a class="card" style="border-left-color:var(--gut)" href="issues/issue-16.html"><div class="num">#16</div><div class="title">越吃越饿</div><div class="hook">不是你管不住嘴，是炎症把你饱腹信号掐了</div></a>
+      <a class="card" style="border-left-color:var(--gut)" href="issues/issue-22.html"><div class="num">#22</div><div class="title">早上起来口发苦</div><div class="hook">不是你上火了，是胃里东西趁你躺下倒灌</div></a>
+      <a class="card" style="border-left-color:var(--gut)" href="issues/issue-25.html"><div class="num">#25</div><div class="title">老想吃甜的</div><div class="hook">不是你缺营养，是肠菌把你的食欲劫持了</div></a>
+      <a class="card" style="border-left-color:var(--gut)" href="issues/issue-26.html"><div class="num">#26</div><div class="title">天热身子就发沉</div><div class="hook">不是你懒了，是湿热把你排水系统堵了</div></a>
+      <a class="card" style="border-left-color:var(--gut)" href="issues/issue-29.html"><div class="num">#29</div><div class="title">办公室祛湿不难</div><div class="hook">不煮不泡，职场牛马也能祛湿</div></a>
+      <a class="card" style="border-left-color:var(--gut)" href="issues/issue-38.html"><div class="num">#38</div><div class="title">嗓子总有东西堵</div><div class="hook">嗓子那团堵，是胃酸烧出来的炎症</div></a>
+    </div>
+  </div>
+
+  <!-- 免疫与过敏 -->
+  <div class="cat" id="cat-immune">
+    <div class="cat-header"><span class="dot" style="background:var(--immune)"></span><h2>免疫与过敏</h2><span class="count">5 期</span></div>
+    <div class="grid">
+      <a class="card" style="border-left-color:var(--immune)" href="issues/issue-09.html"><div class="num">#9</div><div class="title">一换季就喷嚏不停</div><div class="hook">不是免疫力差，是免疫细胞太累了</div></a>
+      <a class="card" style="border-left-color:var(--immune)" href="issues/issue-11.html"><div class="num">#11</div><div class="title">口腔溃疡反复起</div><div class="hook">不是上火那么简单，是黏膜屏障垮了</div></a>
+      <a class="card" style="border-left-color:var(--immune)" href="issues/issue-18.html"><div class="num">#18</div><div class="title">牙龈一刷就出血</div><div class="hook">不是上火那么简单，是牙龈在慢性发炎</div></a>
+      <a class="card" style="border-left-color:var(--immune)" href="issues/issue-39.html"><div class="num">#39</div><div class="title">眼圈铁青遮不住</div><div class="hook">眼圈发青，是鼻子里的肿堵了血路</div></a>
+      <a class="card" style="border-left-color:var(--immune)" href="issues/issue-44.html"><div class="num">#44</div><div class="title">打喷嚏打个没完</div><div class="hook">不是你鼻子娇气，是肥大细胞管不住自己</div></a>
+    </div>
+  </div>
+
+  <!-- 五官 -->
+  <div class="cat" id="cat-face">
+    <div class="cat-header"><span class="dot" style="background:var(--face)"></span><h2>五官</h2><span class="count">3 期</span></div>
+    <div class="grid">
+      <a class="card" style="border-left-color:var(--face)" href="issues/issue-20.html"><div class="num">#20</div><div class="title">眼睛干得像沙漠</div><div class="hook">不是屏幕看多了，是炎症把你眼泪蒸干了</div></a>
+      <a class="card" style="border-left-color:var(--face)" href="issues/issue-31.html"><div class="num">#31</div><div class="title">耳朵越掏越痒</div><div class="hook">不是耳屎在作怪，是你把保护层戳破了</div></a>
+      <a class="card" style="border-left-color:var(--face)" href="issues/issue-47.html"><div class="num">#47</div><div class="title">眼药水越滴越干</div><div class="hook">不是你缺水，是眼睛在发炎</div></a>
+    </div>
+  </div>
+
+  <!-- 激素与情绪 -->
+  <div class="cat" id="cat-hormone">
+    <div class="cat-header"><span class="dot" style="background:var(--hormone)"></span><h2>激素与情绪</h2><span class="count">3 期</span></div>
+    <div class="grid">
+      <a class="card" style="border-left-color:var(--hormone)" href="issues/issue-07.html"><div class="num">#7</div><div class="title">大姨妈前一身痛</div><div class="hook">不是矫情，是炎症被激素放大</div></a>
+      <a class="card" style="border-left-color:var(--hormone)" href="issues/issue-19.html"><div class="num">#19</div><div class="title">没啥事就是不高兴</div><div class="hook">不是你矫情，是炎症把你的快乐偷走了</div></a>
+      <a class="card" style="border-left-color:var(--hormone)" href="issues/issue-24.html"><div class="num">#24</div><div class="title">动不动就一身汗</div><div class="hook">不是你体虚了，是你身体的恒温器调错温度了</div></a>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="brand">李大妈的生活化抗炎笔记</div>
+    <div class="note">点击卡片可查看完整图文。按系统分类，同一类放在一起看，机制会串起来。</div>
+  </div>
+</div>
+</body>
+</html>

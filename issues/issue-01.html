@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<title>李大妈的生活化抗炎笔记 第1期</title>
+<style>
+  * { box-sizing: border-box; margin:0; padding:0; }
+
+  :root {
+    --bg:       #192D4A;
+    --card:     #223958;
+    --gold:     #D4A853;
+    --text:     #EDF1F7;
+    --muted:    #98A9BE;
+    --divider:  #2E4565;
+    --tcm-bg:   #1D3A2B;
+    --tcm-border:#557A55;
+    --tcm-text:  #9CC78A;
+    --west-bg:   #1D344D;
+    --west-border:#5075A0;
+    --west-text:  #8FC0E8;
+  }
+
+  body {
+    width: 1080px;
+    background: var(--bg);
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    color: var(--text);
+  }
+
+  .top-bar {
+    width: 100%; height: 6px;
+    background: linear-gradient(90deg, var(--gold) 0%, #2A4A7A 100%);
+  }
+
+  .container { padding: 52px 58px 48px 58px; }
+
+  .hero { text-align: center; margin-bottom: 48px; }
+  .hero h1 {
+    font-size: 110px; font-weight: 900; color: var(--gold);
+    line-height: 1.12; letter-spacing: 4px; margin-bottom: 22px;
+    text-wrap: pretty;
+  }
+  .hero .hook {
+    font-size: 46px; font-weight: 700; color: var(--text);
+    line-height: 1.4; text-wrap: pretty;
+  }
+  .hero .hook em {
+    font-style: normal; color: var(--gold);
+    background: linear-gradient(180deg, transparent 62%, rgba(212,168,83,0.2) 62%);
+    padding: 0 6px;
+  }
+
+  .compare {
+    display: flex; gap: 28px; margin-bottom: 48px; align-items: stretch;
+  }
+  .col {
+    flex: 1; border-radius: 20px; padding: 36px 32px 32px 32px;
+    text-align: center;
+    display: flex; flex-direction: column; justify-content: center;
+    min-height: 320px;
+  }
+  .col.tcm-col { background: var(--tcm-bg); border: 3px solid var(--tcm-border); }
+  .col.west-col { background: var(--west-bg); border: 3px solid var(--west-border); }
+
+  .col .label { font-size: 34px; font-weight: 600; margin-bottom: 24px; }
+  .col.tcm-col .label { color: var(--tcm-text); }
+  .col.west-col .label { color: var(--west-text); }
+
+  .col .concept { font-size: 76px; font-weight: 900; line-height: 1.15; margin-bottom: 16px; }
+  .col.tcm-col .concept { color: var(--tcm-text); }
+  .col.west-col .concept { color: var(--west-text); }
+
+  .col .desc { font-size: 32px; font-weight: 500; color: var(--muted); line-height: 1.65; text-wrap: pretty; }
+
+  .action-card {
+    background: var(--card); border-radius: 22px;
+    padding: 44px 48px 36px 48px; margin-bottom: 48px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.3);
+  }
+  .action-card .card-title {
+    font-size: 40px; font-weight: 800; color: var(--gold);
+    margin-bottom: 28px; text-wrap: pretty;
+  }
+  .action-list { list-style: none; padding: 0; }
+  .action-list li {
+    display: flex; align-items: flex-start;
+    padding: 24px 0; border-bottom: 1.5px solid var(--divider);
+  }
+  .action-list li:last-child { border-bottom: none; padding-bottom: 0; }
+
+  .action-list .num {
+    width: 50px; height: 50px; border-radius: 50%;
+    background: var(--gold); color: var(--bg);
+    font-size: 26px; font-weight: 800; line-height: 50px;
+    text-align: center; flex-shrink: 0; margin-right: 18px;
+  }
+
+  .action-list .body { flex: 1; min-width: 0; }
+
+  .action-list .what {
+    font-size: 40px; font-weight: 700; color: var(--text);
+    line-height: 1.45; text-wrap: pretty;
+  }
+  .action-list .why {
+    font-size: 32px; font-weight: 400; color: var(--muted);
+    line-height: 1.55; margin-top: 6px; padding-left: 4px;
+    text-wrap: pretty;
+  }
+  .action-list .why::before { content: "→ "; color: var(--gold); font-weight: 600; }
+
+  .footer { text-align: center; padding-top: 20px; border-top: 3px solid var(--gold); }
+  .footer .disclaimer { font-size: 22px; font-weight: 400; color: #506580; margin-top: 14px; }
+  .footer .brand { font-size: 28px; font-weight: 900; color: #708098; letter-spacing: 5px; }
+</style>
+</head>
+<body>
+<div class="top-bar"></div>
+<div class="container">
+  <div class="hero">
+    <h1>饭后困到崩溃？</h1>
+    <p class="hook">别怪自己懒，怪<em>这顿饭</em></p>
+  </div>
+  <div class="compare">
+    <div class="col tcm-col">
+      <div class="label">🍃 中医视角</div>
+      <div class="concept">清阳不升</div>
+      <div class="desc">脾胃运化失常<br>气血上不去头部</div>
+    </div>
+    <div class="col west-col">
+      <div class="label">🔬 西医视角</div>
+      <div class="concept">餐后炎症</div>
+      <div class="desc">精制碳水冲击<br>大脑短暂发炎</div>
+    </div>
+  </div>
+  <div class="action-card">
+    <div class="card-title">💡 饭后做这三件事</div>
+    <ul class="action-list">
+      <li>
+        <div class="num">1</div>
+        <div class="body">
+          <div class="what">饭后站10分钟，别坐下</div>
+          <div class="why">重力帮胃排空，血糖不猛冲，炎症反应直接减半</div>
+        </div>
+      </li>
+      <li>
+        <div class="num">2</div>
+        <div class="body">
+          <div class="what">八段锦「单举手」，左右各5次</div>
+          <div class="why">升清降浊，气血上头部，做完立刻清醒</div>
+        </div>
+      </li>
+      <li>
+        <div class="num">3</div>
+        <div class="body">
+          <div class="what">午餐先吃菜，主食最后吃</div>
+          <div class="why">膳食纤维先铺一层"网"，拦住碳水冲击</div>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="footer">
+    <div class="brand">李大妈的生活化抗炎笔记</div>
+    <div class="disclaimer">以上内容为特定切入点的生活化科普，不构成医学诊断意见。</div>
+  </div>
+</div>
+</body>
+</html>
