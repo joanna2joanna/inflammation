@@ -23,4 +23,6 @@ description: 制作「李大妈的生活化抗炎笔记」小红书贴图
 
 4. 更新 README 选题表。
 
+  确认完成后：`cd /Users/joanna/Projects/inflammation && git add -A && git commit -m "第N-M期：标题A + 标题B" && git push`（Pages 自动部署到 https://joanna2joanna.github.io/inflammation/ ）
+
 口吻：李大妈大白话，不堆术语。口语化不等于俗套话，避用粗俗直白词。钩子要有认知翻转，每条行动解释 why。
