@@ -46,6 +46,13 @@
   .footer { text-align:center; margin-top:60px; padding-top:24px; border-top:2px solid var(--divider); }
   .footer .brand { font-size:20px; font-weight:800; color:#708098; letter-spacing:4px; }
   .footer .note { font-size:14px; color:#506580; margin-top:6px; }
+  .footer .badge {
+    display:inline-block; padding:6px 16px;
+    background:linear-gradient(135deg, rgba(212,168,83,0.2), rgba(212,168,83,0.05));
+    border:1px solid var(--gold); border-radius:20px;
+    font-size:15px; font-weight:700; color:var(--gold); letter-spacing:2px;
+    vertical-align:middle; margin-left:12px;
+  }
 </style>
 </head>
 <body>
@@ -161,8 +168,7 @@
   </div>
 
   <div class="footer">
-    <div class="brand">李大妈的生活化抗炎笔记</div>
-    <div class="note">点击卡片可查看完整图文。按系统分类，同一类放在一起看，机制会串起来。</div>
+    <div class="brand">李大妈的生活化抗炎笔记<span class="badge">GPT-5.6 加持</span></div>
   </div>
 </div>
 <a id="back-to-top" href="#" title="回到顶部" style="position:fixed;bottom:28px;right:28px;z-index:9999;width:48px;height:48px;border-radius:50%;background:rgba(0,0,0,0.5);border:1px solid rgba(255,255,255,0.2);color:#fff;font-size:22px;cursor:pointer;display:none;align-items:center;justify-content:center;text-decoration:none;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);transition:background .2s;line-height:1">&uarr;</a>
