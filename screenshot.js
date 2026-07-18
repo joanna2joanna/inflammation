@@ -9,6 +9,7 @@ if (!input || !output) {
   const page = await browser.newPage();
   await page.setViewportSize({ width: 1080, height: 800 });
   await page.goto(`file://${process.cwd()}/${input}`, { waitUntil: 'networkidle' });
+  await page.addStyleTag({ content: '.nav-fixed { display: none !important; }' });
   const height = await page.evaluate(() => document.body.scrollHeight);
   await page.screenshot({ path: output, fullPage: true });
   console.log(`${output}: 1080×${height}`);

@@ -115,6 +115,12 @@
   .footer .disclaimer { font-size: 22px; font-weight: 400; color: #506580; margin-top: 14px; }
   .footer .brand { font-size: 28px; font-weight: 900; color: #708098; letter-spacing: 5px; }
 
+/* NAV: back-to-top + home */
+.nav-fixed{position:fixed;bottom:28px;right:28px;z-index:9999;display:flex;flex-direction:column;gap:12px}
+.nav-btn{width:48px;height:48px;border-radius:50%;background:rgba(0,0,0,0.5);border:1px solid rgba(255,255,255,0.2);color:#fff;font-size:22px;cursor:pointer;display:flex;align-items:center;justify-content:center;text-decoration:none;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);transition:background .2s;line-height:1;user-select:none}
+.nav-btn:hover{background:rgba(0,0,0,0.7)}
+#back-to-top{display:none}
+
 </style>
 </head>
 <body>
@@ -167,5 +173,16 @@
     <div class="disclaimer">以上内容为特定切入点的生活化科普，不构成医学诊断意见。</div>
   </div>
 </div></div>
+<div class="nav-fixed">
+<a id="back-to-top" class="nav-btn" href="#" title="回到顶部">&uarr;</a>
+<a class="nav-btn" href="../review.html" title="回到首页">&lceil;</a>
+</div>
+<script>
+(function(){
+var b=document.getElementById('back-to-top');
+window.addEventListener('scroll',function(){b.style.display=window.scrollY>400?'flex':'none'});
+b.addEventListener('click',function(e){e.preventDefault();window.scrollTo({top:0,behavior:'smooth'})});
+})();
+</script>
 </body>
 </html>
