@@ -8,18 +8,18 @@
   * { box-sizing: border-box; margin:0; padding:0; }
 
   :root {
-    --bg:       #192D4A;
-    --card:     #223958;
-    --gold:     #D4A853;
-    --text:     #EDF1F7;
-    --muted:    #98A9BE;
-    --divider:  #2E4565;
-    --tcm-bg:   #1D3A2B;
-    --tcm-border:#557A55;
-    --tcm-text:  #9CC78A;
-    --west-bg:   #1D344D;
-    --west-border:#5075A0;
-    --west-text:  #8FC0E8;
+    --bg:       #DEE4EB;
+    --card:     #FFFFFF;
+    --gold:     #A67C2E;
+    --text:     #1E293B;
+    --muted:    #5B6A7C;
+    --divider:  #C8CFD8;
+    --tcm-bg:   #DCE8DB;
+    --tcm-border:#7A9F74;
+    --tcm-text:  #3D5C38;
+    --west-bg:   #D9E4F0;
+    --west-border:#6A8FB5;
+    --west-text:  #3A5F85;
   }
 
   body {
@@ -32,7 +32,7 @@
 
   .top-bar {
     width: 100%; height: 6px;
-    background: linear-gradient(90deg, var(--gold) 0%, #2A4A7A 100%);
+    background: linear-gradient(90deg, var(--gold) 0%, #8BA3C0 100%);
   }
 
   .container { padding: 52px 58px 48px 58px; }
@@ -49,7 +49,7 @@
   }
   .hero .hook em {
     font-style: normal; color: var(--gold);
-    background: linear-gradient(180deg, transparent 62%, rgba(212,168,83,0.2) 62%);
+    background: linear-gradient(180deg, transparent 62%, rgba(166,124,46,0.2) 62%);
     padding: 0 6px;
   }
 
@@ -69,7 +69,7 @@
   .col.tcm-col .label { color: var(--tcm-text); }
   .col.west-col .label { color: var(--west-text); }
 
-  .col .concept { font-size: 80px; font-weight: 900; line-height: 1.15; margin-bottom: 16px; }
+  .col .concept { font-size: 76px; font-weight: 900; line-height: 1.15; margin-bottom: 16px; }
   .col.tcm-col .concept { color: var(--tcm-text); }
   .col.west-col .concept { color: var(--west-text); }
 
@@ -78,7 +78,7 @@
   .action-card {
     background: var(--card); border-radius: 22px;
     padding: 44px 48px 36px 48px; margin-bottom: 48px;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
   }
   .action-card .card-title {
     font-size: 40px; font-weight: 800; color: var(--gold);
@@ -93,7 +93,7 @@
 
   .action-list .num {
     width: 50px; height: 50px; border-radius: 50%;
-    background: var(--gold); color: var(--bg);
+    background: var(--gold); color: #FFF;
     font-size: 26px; font-weight: 800; line-height: 50px;
     text-align: center; flex-shrink: 0; margin-right: 18px;
   }
@@ -112,13 +112,13 @@
   .action-list .why::before { content: "→ "; color: var(--gold); font-weight: 600; }
 
   .footer { text-align: center; padding-top: 20px; border-top: 3px solid var(--gold); }
-  .footer .disclaimer { font-size: 22px; font-weight: 400; color: #506580; margin-top: 14px; }
-  .footer .brand { font-size: 28px; font-weight: 900; color: #708098; letter-spacing: 5px; }
+  .footer .disclaimer { font-size: 22px; font-weight: 400; color: #8B9AAD; margin-top: 14px; }
+  .footer .brand { font-size: 28px; font-weight: 900; color: #9AABC0; letter-spacing: 5px; }
 
 /* NAV: back-to-top + home */
 .nav-fixed{position:fixed;bottom:28px;right:28px;z-index:9999;display:flex;flex-direction:column;gap:12px}
-.nav-btn{width:48px;height:48px;border-radius:50%;background:rgba(0,0,0,0.5);border:1px solid rgba(255,255,255,0.2);color:#fff;font-size:22px;cursor:pointer;display:flex;align-items:center;justify-content:center;text-decoration:none;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);transition:background .2s;line-height:1;user-select:none}
-.nav-btn:hover{background:rgba(0,0,0,0.7)}
+.nav-btn{width:48px;height:48px;border-radius:50%;background:rgba(0,0,0,0.25);border:1px solid rgba(0,0,0,0.1);color:#666;font-size:22px;cursor:pointer;display:flex;align-items:center;justify-content:center;text-decoration:none;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);transition:background .2s;line-height:1;user-select:none}
+.nav-btn:hover{background:rgba(0,0,0,0.4);color:#fff}
 #back-to-top{display:none}
 </style>
 </head>
@@ -126,43 +126,43 @@
 <div class="top-bar"></div>
 <div class="container">
   <div class="hero">
-    <h1>越运动越累？</h1>
-    <p class="hook">不是你体能差，是<em>练过头了</em></p>
+    <h1>油烟呛不是上火</h1>
+    <p class="hook">炝锅吸进去的油烟微粒，<em>当场</em>让呼吸道发炎</p>
   </div>
   <div class="compare">
     <div class="col tcm-col">
       <div class="label">🍃 中医视角</div>
-      <div class="concept">耗气伤血</div>
-      <div class="desc">运动过量，气血透支<br>身体来不及恢复</div>
+      <div class="concept">燥热伤肺</div>
+      <div class="desc">油烟属燥邪，耗伤肺津<br>肺失润降，干咳咽痒</div>
     </div>
     <div class="col west-col">
       <div class="label">🔬 西医视角</div>
-      <div class="concept">运动炎症</div>
-      <div class="desc">肌肉微损伤，释放炎症因子<br>身体越练越疲劳</div>
+      <div class="concept">吸入性炎症</div>
+      <div class="desc">微粒激活呼吸道炎性通路<br>促炎因子当场大量释放</div>
     </div>
   </div>
   <div class="action-card">
-    <div class="card-title">💡 运动前后做这三件事</div>
+    <div class="card-title">💡 下厨前做这三件事</div>
     <ul class="action-list">
       <li>
         <div class="num">1</div>
         <div class="body">
-          <div class="what">别空腹练，先垫一口碳水</div>
-          <div class="why">空腹运动皮质醇飙升，越练越发炎</div>
+          <div class="what">开窗再开火，再开油烟机</div>
+          <div class="why">通风加油烟机，PM2.5散掉九成</div>
         </div>
       </li>
       <li>
         <div class="num">2</div>
         <div class="body">
-          <div class="what">练完半小时内补蛋白质</div>
-          <div class="why">肌肉修复快一倍，阻断炎症循环</div>
+          <div class="what">油烧到五六成热就下菜</div>
+          <div class="why">冒烟时油温已超200℃，有害物大量跑出来</div>
         </div>
       </li>
       <li>
         <div class="num">3</div>
         <div class="body">
-          <div class="what">每周至少歇两天，别天天练</div>
-          <div class="why">身体清炎症要48小时，天天练反而倒退</div>
+          <div class="what">炒完菜喝杯温水润一润</div>
+          <div class="why">温水把嗓子里的刺激物冲一冲，好得快</div>
         </div>
       </li>
     </ul>
