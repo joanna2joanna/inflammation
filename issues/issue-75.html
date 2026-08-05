@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>李大妈的生活化养生笔记 第75期</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg:       #3D2C24;
+    --card:     #4A372E;
+    --accent:   #E8875B;
+    --accent2:  #F4A460;
+    --text:     #F5EDE4;
+    --muted:    #B8A494;
+    --divider:  rgba(255,255,255,0.08);
+  }
+
+  body {
+    width: 1080px; height: 1438px; margin: 0 auto;
+    background: var(--bg);
+    font-family: "PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    color: var(--text);
+    overflow: hidden;
+  }
+
+  .card {
+    background: var(--bg); position: relative;
+    padding: 56px 64px 64px;
+  }
+  .grid-bg {
+    position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 60px 60px; pointer-events: none;
+  }
+  .glow {
+    position: absolute; top: -40px; right: -40px;
+    width: 340px; height: 340px;
+    background: radial-gradient(circle, rgba(232,135,91,0.16) 0%, transparent 70%);
+    border-radius: 50%; pointer-events: none;
+  }
+  .glow2 {
+    position: absolute; bottom: -30px; left: -30px;
+    width: 260px; height: 260px;
+    background: radial-gradient(circle, rgba(244,164,96,0.10) 0%, transparent 70%);
+    border-radius: 50%; pointer-events: none;
+  }
+  .top-bar {
+    width: 100%; height: 6px;
+    background: linear-gradient(90deg, var(--accent) 0%, var(--accent2) 50%, #C05A2B 100%);
+    position: relative; z-index: 1;
+  }
+
+  .container { position: relative; z-index: 1; padding-top: 44px; }
+
+  .hero { text-align: center; margin-bottom: 40px; }
+  .hero h1 {
+    font-size: 108px; font-weight: 900; color: #fff;
+    line-height: 1.12; letter-spacing: 5px; margin-bottom: 14px;
+    text-shadow: 0 0 80px rgba(232,135,91,0.35);
+  }
+  .hero .flip {
+    font-size: 34px; font-weight: 500; color: var(--muted);
+    line-height: 1.5;
+  }
+  .hero .flip em {
+    font-style: normal; color: var(--accent); font-weight: 700;
+  }
+
+  .why-card {
+    background: var(--card); border-radius: 18px;
+    padding: 32px 40px; margin-bottom: 28px;
+    border: 1px solid rgba(255,255,255,0.06);
+    border-left: 4px solid var(--accent);
+  }
+  .why-card .section-label {
+    font-size: 24px; font-weight: 700; color: var(--accent);
+    margin-bottom: 12px; letter-spacing: 3px;
+  }
+  .why-card p {
+    font-size: 28px; line-height: 1.8; color: var(--text);
+  }
+
+  .action-card {
+    background: var(--card); border-radius: 18px;
+    padding: 32px 40px 24px; margin-bottom: 40px;
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+  .action-card .section-label {
+    font-size: 24px; font-weight: 700; color: var(--accent);
+    margin-bottom: 18px; letter-spacing: 3px;
+  }
+  .action-list { list-style: none; padding: 0; }
+  .action-list li {
+    display: flex; align-items: flex-start;
+    padding: 18px 0; border-bottom: 1.5px solid var(--divider);
+  }
+  .action-list li:last-child { border-bottom: none; padding-bottom: 0; }
+
+  .action-list .num {
+    width: 44px; height: 44px; border-radius: 50%;
+    background: var(--accent); color: #FFF;
+    font-size: 22px; font-weight: 800; line-height: 44px;
+    text-align: center; flex-shrink: 0; margin-right: 18px;
+  }
+  .action-list .body { flex: 1; min-width: 0; }
+  .action-list .what {
+    font-size: 34px; font-weight: 700; color: #fff;
+    line-height: 1.4;
+  }
+  .action-list .why {
+    font-size: 28px; font-weight: 400; color: var(--muted);
+    line-height: 1.5; margin-top: 4px; padding-left: 4px;
+  }
+  .action-list .why::before { content: "→ "; color: var(--accent); font-weight: 600; }
+
+  .footer { text-align: center; padding-top: 16px; border-top: 2px solid rgba(255,255,255,0.08); }
+  .footer .brand { font-size: 24px; font-weight: 800; color: rgba(255,255,255,0.22); letter-spacing: 5px; }
+  .footer .disclaimer { font-size: 18px; font-weight: 400; color: rgba(255,255,255,0.13); margin-top: 8px; }
+
+  .nav-fixed{display:none}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="grid-bg"></div>
+  <div class="glow"></div>
+  <div class="glow2"></div>
+  <div class="top-bar"></div>
+  <div class="container">
+    <div class="hero">
+      <h1>洗松茸别泡水</h1>
+      <p class="flip">你以为泡水洗得净，<em>其实鲜味都溶进了水里</em></p>
+    </div>
+
+    <div class="why-card">
+      <div class="section-label">🧐 为什么</div>
+      <p>松茸的鲜味，靠的是菌肉里的氨基酸和核苷酸，都是水溶性的小分子。整颗泡进水里，这些鲜味就一点一点溶进水里，泡得越久溶出去越多。菌体又像海绵，泡完吸饱了水，发软，煎炒少了那口弹嫩。土是洗掉了，鲜味也搭进去了。</p>
+    </div>
+
+    <div class="action-card">
+      <div class="section-label">💡 怎么做</div>
+      <ul class="action-list">
+        <li>
+          <div class="num">1</div>
+          <div class="body">
+            <div class="what">陶瓷刀刮泥，干刷扫土</div>
+            <div class="why">不沾水，水溶的鲜味留在菌肉里</div>
+          </div>
+        </li>
+        <li>
+          <div class="num">2</div>
+          <div class="body">
+            <div class="what">实在脏，最小水流快冲</div>
+            <div class="why">沾水时间短，泥掉了味还在</div>
+          </div>
+        </li>
+        <li>
+          <div class="num">3</div>
+          <div class="body">
+            <div class="what">褐色菌衣别刮掉</div>
+            <div class="why">香气就在这层褐色里</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="footer">
+      <div class="brand">李大妈的生活化养生笔记</div>
+      <div class="disclaimer">以上内容为生活观察笔记，不构成医学意见。</div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
