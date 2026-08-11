@@ -72,7 +72,7 @@
 
   .why-card {
     background: var(--card); border-radius: 18px;
-    padding: 32px 40px; margin-bottom: 28px;
+    padding: 32px 40px; margin-bottom: 26px;
     border: 1px solid rgba(255,255,255,0.06);
     border-left: 4px solid var(--accent);
   }
@@ -86,7 +86,7 @@
 
   .action-card {
     background: var(--card); border-radius: 18px;
-    padding: 32px 40px 24px; margin-bottom: 40px;
+    padding: 32px 40px 24px; margin-bottom: 24px;
     border: 1px solid rgba(255,255,255,0.06);
   }
   .action-card .section-label {
@@ -119,14 +119,21 @@
 
   .source {
     text-align: center;
-    padding: 12px 0 6px;
+    padding: 8px 0 16px;
     border-top: 1px solid rgba(255,255,255,0.06);
     font-size: 16px;
     color: rgba(255,255,255,0.30);
     line-height: 1.5;
     letter-spacing: 0.5px;
   }
-  .footer { text-align: center; padding-top: 16px; border-top: 2px solid rgba(255,255,255,0.08); }
+  .source .source-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.42);
+    letter-spacing: 2px;
+    margin-bottom: 4px;
+  }
+  .footer { text-align: center; padding-top: 10px; border-top: 2px solid rgba(255,255,255,0.08); }
   .footer .brand { font-size: 24px; font-weight: 800; color: rgba(255,255,255,0.22); letter-spacing: 5px; }
   .footer .disclaimer { font-size: 18px; font-weight: 400; color: rgba(255,255,255,0.13); margin-top: 8px; }
 
@@ -178,6 +185,7 @@
     </div>
 
     <div class="source">
+      <div class="source-label">参考文献</div>
       <div>Nature 2008 · 数量恒定，只缩体积 ｜ Nature 2024 · 减重后肥胖记忆</div>
       <div>丁香园 · 成人数量基本固定 ｜ 科学网 · 儿童期数量定型</div>
     </div>
