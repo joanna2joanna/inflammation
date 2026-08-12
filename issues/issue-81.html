@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>李大妈的生活化养生笔记 第81期</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg:       #3D2C24;
+    --card:     #4A372E;
+    --accent:   #E8875B;
+    --accent2:  #F4A460;
+    --text:     #F5EDE4;
+    --muted:    #B8A494;
+    --divider:  rgba(255,255,255,0.08);
+  }
+
+  body {
+    width: 1080px; height: 1438px; margin: 0 auto;
+    background: var(--bg);
+    font-family: "PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    color: var(--text);
+    overflow: hidden;
+  }
+
+  .card {
+    background: var(--bg); position: relative;
+    padding: 56px 64px 40px;
+  }
+  .grid-bg {
+    position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 60px 60px; pointer-events: none;
+  }
+  .glow {
+    position: absolute; top: -40px; right: -40px;
+    width: 340px; height: 340px;
+    background: radial-gradient(circle, rgba(232,135,91,0.16) 0%, transparent 70%);
+    border-radius: 50%; pointer-events: none;
+  }
+  .glow2 {
+    position: absolute; bottom: -30px; left: -30px;
+    width: 260px; height: 260px;
+    background: radial-gradient(circle, rgba(244,164,96,0.10) 0%, transparent 70%);
+    border-radius: 50%; pointer-events: none;
+  }
+  .top-bar {
+    width: 100%; height: 6px;
+    background: linear-gradient(90deg, var(--accent) 0%, var(--accent2) 50%, #C05A2B 100%);
+    position: relative; z-index: 1;
+  }
+
+  .container { position: relative; z-index: 1; padding-top: 44px; }
+
+  .hero { text-align: center; margin-bottom: 40px; }
+  .hero h1 {
+    font-size: 100px; font-weight: 900; color: #fff;
+    line-height: 1.12; letter-spacing: 5px; margin-bottom: 14px;
+    text-shadow: 0 0 80px rgba(232,135,91,0.35);
+  }
+  .hero .flip {
+    font-size: 34px; font-weight: 500; color: var(--muted);
+    line-height: 1.5;
+  }
+  .hero .flip em {
+    font-style: normal; color: var(--accent); font-weight: 700;
+  }
+
+  .why-card {
+    background: var(--card); border-radius: 18px;
+    padding: 32px 40px; margin-bottom: 26px;
+    border: 1px solid rgba(255,255,255,0.06);
+    border-left: 4px solid var(--accent);
+  }
+  .why-card .section-label {
+    font-size: 24px; font-weight: 700; color: var(--accent);
+    margin-bottom: 12px; letter-spacing: 3px;
+  }
+  .why-card p {
+    font-size: 28px; line-height: 1.8; color: var(--text);
+  }
+
+  .action-card {
+    background: var(--card); border-radius: 18px;
+    padding: 32px 40px 24px; margin-bottom: 21px;
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+  .action-card .section-label {
+    font-size: 24px; font-weight: 700; color: var(--accent);
+    margin-bottom: 18px; letter-spacing: 3px;
+  }
+  .action-list { list-style: none; padding: 0; }
+  .action-list li {
+    display: flex; align-items: flex-start;
+    padding: 18px 0; border-bottom: 1.5px solid var(--divider);
+  }
+  .action-list li:last-child { border-bottom: none; padding-bottom: 0; }
+
+  .action-list .num {
+    width: 44px; height: 44px; border-radius: 50%;
+    background: var(--accent); color: #FFF;
+    font-size: 22px; font-weight: 800; line-height: 44px;
+    text-align: center; flex-shrink: 0; margin-right: 18px;
+  }
+  .action-list .body { flex: 1; min-width: 0; }
+  .action-list .what {
+    font-size: 34px; font-weight: 700; color: #fff;
+    line-height: 1.4;
+  }
+  .action-list .why {
+    font-size: 28px; font-weight: 400; color: var(--muted);
+    line-height: 1.5; margin-top: 4px; padding-left: 4px;
+  }
+  .action-list .why::before { content: "→ "; color: var(--accent); font-weight: 600; }
+
+  .source {
+    text-align: center;
+    padding: 8px 0 44px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    font-size: 18px;
+    color: rgba(255,255,255,0.30);
+    line-height: 1.5;
+    letter-spacing: 0.5px;
+  }
+  .footer { text-align: center; padding: 24px 4px 0; border-top: 2px solid rgba(255,255,255,0.08); }
+  .footer .brand { font-size: 24px; font-weight: 800; color: rgba(255,255,255,0.22); letter-spacing: 5px; }
+  .footer .disclaimer { font-size: 18px; font-weight: 400; color: rgba(255,255,255,0.13); margin-top: 8px; }
+
+  .nav-fixed{display:none}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="grid-bg"></div>
+  <div class="glow"></div>
+  <div class="glow2"></div>
+  <div class="top-bar"></div>
+  <div class="container">
+    <div class="hero">
+      <h1>三十岁后练力量</h1>
+      <p class="flip">跑步跳操管心肺，<em>保肌肉保骨头靠力量</em></p>
+    </div>
+
+    <div class="why-card">
+      <div class="section-label">🧐 为什么</div>
+      <p>跑步、跳操、快走，练的是心肺，练不到肌肉，也压不着骨头。三十多岁起，肌肉平均每十年掉3%到8%，骨密度在三十岁前后到顶，之后一路往下，雌激素一降，掉得更快。力量训练刺激肌肉生长，负重给骨骼施压，把骨密度留住，这才是这个年纪最该练的。</p>
+    </div>
+
+    <div class="action-card">
+      <div class="section-label">💡 怎么做</div>
+      <ul class="action-list">
+        <li>
+          <div class="num">1</div>
+          <div class="body">
+            <div class="what">力量每周两三次，隔天练</div>
+            <div class="why">肌肉在休息时长，练太密破坏多过修复</div>
+          </div>
+        </li>
+        <li>
+          <div class="num">2</div>
+          <div class="body">
+            <div class="what">深蹲臀桥俯卧撑打底</div>
+            <div class="why">一次带动全身大肌群，还给骨头施压</div>
+          </div>
+        </li>
+        <li>
+          <div class="num">3</div>
+          <div class="body">
+            <div class="what">高强度一周顶多一两次</div>
+            <div class="why">冲多了恢复不过来，越练越累还掉肌肉</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="source">
+      <div>中国指南2021 · 力量隔日练，每周至少2天 ｜ 体育科学 · 30岁后肌力骨密度下滑</div>
+      <div>临床共识2025 · 围绝经期以抗阻为主 ｜ 研究 · 高强度每周顶多1-2次</div>
+    </div>
+
+    <div class="footer">
+      <div class="brand">李大妈的生活化养生笔记</div>
+      <div class="disclaimer">以上内容为学习随笔，不构成医学意见
+    </div>
+  </div>
+</div>
+<!-- 来源：1) 《中国人群身体活动指南（2021）》：18-64岁成人每周150-300分钟中等强度有氧或75-150分钟高强度，加每周至少2天肌肉力量练习，力量活动同一肌群不宜连续两天（隔日进行）https://www.163.com/dy/article/GSE4IBSP05347DU2.html?spss=adap_pc . 2) WHO 2020指南（2024重申）：成人每周150-300分钟中强度有氧+2天以上力量训练；抗阻运动独立降低全因死亡15-21% https://www.orthopedicsri.com/blog-items/physical-activity-guidelines/ . 3) 《体育科学》：161名20-69岁女性研究，肌力与骨密度30-39岁达峰，之后渐降；女性30多岁起肌肉每十年流失约3%-8%（综述）https://www.xueshu.com/tykx/201508/266905.html . 4) 《临床运动处方实践专家共识（2025）》：围绝经期/绝经女性以中高强度渐进抗阻为主，配合负重/冲击/有氧/平衡训练；蛋白1.0-1.5g/kg/天 https://www.sport.gov.cn/n20001280/n20001265/n20066978/c29117353/content.html . 5) HIIT剂量：每周90分钟HIIT安全，超152分钟/周现负面适应（Women's Health UK 引用研究）；2021年中国共识建议每周2-3次20-30分钟 https://www.womenshealthmag.com/uk/collective/ask/a43250620/hiit-cortisol-levels/ . 6) 周期同步无必要：McMaster大学研究，卵泡期/黄体期肌肉蛋白合成无差异 https://www.acefitness.org/continuing-education/certified/april-2025/8846/menstrual-cycle-and-resistance-training-what-the-latest-research-says/ -->
+</body>
+</html>
