@@ -21,8 +21,14 @@ description: 制作「李大妈的生活化养生笔记」小红书贴图
 
 3. 截图：`NODE_PATH=/Users/joanna/.workbuddy/binaries/node/workspace/node_modules node screenshot.js issues/issue-XX.html issues/issue-XX.png`
 
-4. 更新 README 选题表。
+4. 更新 README 选题表（追加 `| N | 标题 | 钩子 | ✅ |`）。
 
-  确认完成后：`cd /Users/joanna/Projects/inflammation && git add -A && git commit -m "第N-M期：标题A + 标题B" && git push`（Pages 自动部署到 https://joanna2joanna.github.io/inflammation/ ）
+5. 更新网页索引 `review.html`，把新卡插到对应分类最顶部（从新到旧）：
+   `python3 update_review.py <期号> <分类名>`
+   分类名：皮肤与屏障 / 关节、肌肉与筋膜 / 大脑与神经 / 消化与代谢 / 免疫与过敏 / 五官 / 激素与情绪 / 吃对厨房 / 肠道菌群 / 呼吸与运动。
+   主题都不搭就开新分类：`python3 update_review.py <期号> <新分类名>`。
+   脚本自动：插卡到分类顶部、更新该分类期数、更新全页期数（标题+副标题）；新分类自动加配色、图例链接、新章节。
+
+  用户确认后自动上传：`cd /Users/joanna/Projects/inflammation && git add -A && git commit -m "第N期：标题" && git push`（Pages 自动部署到 https://joanna2joanna.github.io/inflammation/ ）
 
 口吻：李大妈大白话，不堆术语。口语化不等于俗套话，避用粗俗直白词。钩子要有认知翻转，每条行动解释 why。
