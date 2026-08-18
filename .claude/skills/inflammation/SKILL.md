@@ -1,6 +1,6 @@
 ---
 name: inflammation
-description: 制作「李大妈的生活化抗炎笔记」小红书贴图
+description: 制作「李大妈的生活化养生笔记」小红书贴图
 ---
 
 当用户提供主题时：
