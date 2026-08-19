@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>李大妈的生活化养生笔记 第86期</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg:       #3D2C24;
+    --card:     #4A372E;
+    --accent:   #E8875B;
+    --accent2:  #F4A460;
+    --text:     #F5EDE4;
+    --muted:    #B8A494;
+    --divider:  rgba(255,255,255,0.08);
+  }
+
+  body {
+    width: 1080px; height: 1438px; margin: 0 auto;
+    background: var(--bg);
+    font-family: "PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    color: var(--text);
+    overflow: hidden;
+  }
+
+  .card {
+    background: var(--bg); position: relative;
+    padding: 56px 64px 40px;
+  }
+  .grid-bg {
+    position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 60px 60px; pointer-events: none;
+  }
+  .glow {
+    position: absolute; top: -40px; right: -40px;
+    width: 340px; height: 340px;
+    background: radial-gradient(circle, rgba(232,135,91,0.16) 0%, transparent 70%);
+    border-radius: 50%; pointer-events: none;
+  }
+  .glow2 {
+    position: absolute; bottom: -30px; left: -30px;
+    width: 260px; height: 260px;
+    background: radial-gradient(circle, rgba(244,164,96,0.10) 0%, transparent 70%);
+    border-radius: 50%; pointer-events: none;
+  }
+  .top-bar {
+    width: 100%; height: 6px;
+    background: linear-gradient(90deg, var(--accent) 0%, var(--accent2) 50%, #C05A2B 100%);
+    position: relative; z-index: 1;
+  }
+
+  .container { position: relative; z-index: 1; padding-top: 44px; }
+
+  .hero { text-align: center; margin-bottom: 40px; }
+  .hero h1 {
+    font-size: 100px; font-weight: 900; color: #fff;
+    line-height: 1.12; letter-spacing: 5px; margin-bottom: 14px;
+    text-shadow: 0 0 80px rgba(232,135,91,0.35);
+  }
+  .hero .flip {
+    font-size: 34px; font-weight: 500; color: var(--muted);
+    line-height: 1.5;
+  }
+  .hero .flip em {
+    font-style: normal; color: var(--accent); font-weight: 700;
+  }
+
+  .why-card {
+    background: var(--card); border-radius: 18px;
+    padding: 32px 40px; margin-bottom: 26px;
+    border: 1px solid rgba(255,255,255,0.06);
+    border-left: 4px solid var(--accent);
+  }
+  .why-card .section-label {
+    font-size: 24px; font-weight: 700; color: var(--accent);
+    margin-bottom: 12px; letter-spacing: 3px;
+  }
+  .why-card p {
+    font-size: 28px; line-height: 1.8; color: var(--text);
+  }
+
+  .action-card {
+    background: var(--card); border-radius: 18px;
+    padding: 32px 40px 24px; margin-bottom: 21px;
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+  .action-card .section-label {
+    font-size: 24px; font-weight: 700; color: var(--accent);
+    margin-bottom: 18px; letter-spacing: 3px;
+  }
+  .action-list { list-style: none; padding: 0; }
+  .action-list li {
+    display: flex; align-items: flex-start;
+    padding: 18px 0; border-bottom: 1.5px solid var(--divider);
+  }
+  .action-list li:last-child { border-bottom: none; padding-bottom: 0; }
+
+  .action-list .num {
+    width: 44px; height: 44px; border-radius: 50%;
+    background: var(--accent); color: #FFF;
+    font-size: 22px; font-weight: 800; line-height: 44px;
+    text-align: center; flex-shrink: 0; margin-right: 18px;
+  }
+  .action-list .body { flex: 1; min-width: 0; }
+  .action-list .what {
+    font-size: 34px; font-weight: 700; color: #fff;
+    line-height: 1.4;
+  }
+  .action-list .why {
+    font-size: 28px; font-weight: 400; color: var(--muted);
+    line-height: 1.5; margin-top: 4px; padding-left: 4px;
+  }
+  .action-list .why::before { content: "→ "; color: var(--accent); font-weight: 600; }
+
+  .source {
+    text-align: center;
+    padding: 8px 0 44px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    font-size: 18px;
+    color: rgba(255,255,255,0.30);
+    line-height: 1.5;
+    letter-spacing: 0.5px;
+  }
+  .footer { text-align: center; padding: 24px 4px 0; border-top: 2px solid rgba(255,255,255,0.08); }
+  .footer .brand { font-size: 24px; font-weight: 800; color: rgba(255,255,255,0.22); letter-spacing: 5px; }
+  .footer .disclaimer { font-size: 18px; font-weight: 400; color: rgba(255,255,255,0.13); margin-top: 8px; }
+
+  .nav-fixed{display:none}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="grid-bg"></div>
+  <div class="glow"></div>
+  <div class="glow2"></div>
+  <div class="top-bar"></div>
+  <div class="container">
+    <div class="hero">
+      <h1>益生菌啥时吃</h1>
+      <p class="flip">空腹吞损耗大，<em>随餐吃</em>存活率才高</p>
+    </div>
+
+    <div class="why-card">
+      <div class="section-label">🧐 为什么</div>
+      <p>活菌要管用，先得活着到肠道，路上第一道关就是胃酸。空腹吞下去，胃里没东西垫，酸液直接泡着活菌，pH 最低到 1.5-2.5，大批活菌在胃里就交代了。跟着饭菜吃就不同：食物把胃酸冲淡垫高，活菌还能沾在食物颗粒上，跟着食物一起往小肠走，过关率明显高。</p>
+    </div>
+
+    <div class="action-card">
+      <div class="section-label">💡 怎么做</div>
+      <ul class="action-list">
+        <li>
+          <div class="num">1</div>
+          <div class="body">
+            <div class="what">随餐吃，或餐前半小时</div>
+            <div class="why">空腹胃酸最凶、活菌损耗大；食物垫底冲淡胃酸，过关率高</div>
+          </div>
+        </li>
+        <li>
+          <div class="num">2</div>
+          <div class="body">
+            <div class="what">标了「耐酸、肠溶」的，按说明吃</div>
+            <div class="why">这种剂型自己扛得住胃酸，饭前饭后都行，说明咋标咋来</div>
+          </div>
+        </li>
+        <li>
+          <div class="num">3</div>
+          <div class="body">
+            <div class="what">天天吃，别为卡点焦虑</div>
+            <div class="why">2017年人体试验发现，饭前饭后定植没差别，坚持吃、选对菌株才管用</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="source">
+      <div>Beneficial Microbes 2011 · 餐前30分/随餐存活率最高 ｜ Foods 2025 · 随餐比空腹高</div>
+      <div>World J Gastroenterol 2017 · 饭前饭后定植没差别 ｜ 科普中国 · 空腹胃酸最凶损耗大</div>
+    </div>
+
+    <div class="footer">
+      <div class="brand">李大妈的生活化养生笔记</div>
+      <div class="disclaimer">以上内容为学习随笔，不构成医学意见</div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
