@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>李大妈的生活化养生笔记 第88期</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg:       #3D2C24;
+    --card:     #4A372E;
+    --accent:   #E8875B;
+    --accent2:  #F4A460;
+    --text:     #F5EDE4;
+    --muted:    #B8A494;
+    --divider:  rgba(255,255,255,0.08);
+  }
+
+  body {
+    width: 1080px; height: 1438px; margin: 0 auto;
+    background: var(--bg);
+    font-family: "PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    color: var(--text);
+    overflow: hidden;
+  }
+
+  .card {
+    background: var(--bg); position: relative;
+    padding: 56px 64px 40px;
+  }
+  .grid-bg {
+    position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 60px 60px; pointer-events: none;
+  }
+  .glow {
+    position: absolute; top: -40px; right: -40px;
+    width: 340px; height: 340px;
+    background: radial-gradient(circle, rgba(232,135,91,0.16) 0%, transparent 70%);
+    border-radius: 50%; pointer-events: none;
+  }
+  .glow2 {
+    position: absolute; bottom: -30px; left: -30px;
+    width: 260px; height: 260px;
+    background: radial-gradient(circle, rgba(244,164,96,0.10) 0%, transparent 70%);
+    border-radius: 50%; pointer-events: none;
+  }
+  .top-bar {
+    width: 100%; height: 6px;
+    background: linear-gradient(90deg, var(--accent) 0%, var(--accent2) 50%, #C05A2B 100%);
+    position: relative; z-index: 1;
+  }
+
+  .container { position: relative; z-index: 1; padding-top: 44px; }
+
+  .hero { text-align: center; margin-bottom: 40px; }
+  .hero h1 {
+    font-size: 100px; font-weight: 900; color: #fff;
+    line-height: 1.12; letter-spacing: 5px; margin-bottom: 14px;
+    text-shadow: 0 0 80px rgba(232,135,91,0.35);
+  }
+  .hero .flip {
+    font-size: 34px; font-weight: 500; color: var(--muted);
+    line-height: 1.5;
+  }
+  .hero .flip em {
+    font-style: normal; color: var(--accent); font-weight: 700;
+  }
+
+  .why-card {
+    background: var(--card); border-radius: 18px;
+    padding: 32px 40px; margin-bottom: 26px;
+    border: 1px solid rgba(255,255,255,0.06);
+    border-left: 4px solid var(--accent);
+  }
+  .why-card .section-label {
+    font-size: 24px; font-weight: 700; color: var(--accent);
+    margin-bottom: 12px; letter-spacing: 3px;
+  }
+  .why-card p {
+    font-size: 28px; line-height: 1.8; color: var(--text);
+  }
+
+  .action-card {
+    background: var(--card); border-radius: 18px;
+    padding: 32px 40px 24px; margin-bottom: 21px;
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+  .action-card .section-label {
+    font-size: 24px; font-weight: 700; color: var(--accent);
+    margin-bottom: 18px; letter-spacing: 3px;
+  }
+  .action-list { list-style: none; padding: 0; }
+  .action-list li {
+    display: flex; align-items: flex-start;
+    padding: 18px 0; border-bottom: 1.5px solid var(--divider);
+  }
+  .action-list li:last-child { border-bottom: none; padding-bottom: 0; }
+
+  .action-list .num {
+    width: 44px; height: 44px; border-radius: 50%;
+    background: var(--accent); color: #FFF;
+    font-size: 22px; font-weight: 800; line-height: 44px;
+    text-align: center; flex-shrink: 0; margin-right: 18px;
+  }
+  .action-list .body { flex: 1; min-width: 0; }
+  .action-list .what {
+    font-size: 34px; font-weight: 700; color: #fff;
+    line-height: 1.4;
+  }
+  .action-list .why {
+    font-size: 28px; font-weight: 400; color: var(--muted);
+    line-height: 1.5; margin-top: 4px; padding-left: 4px;
+  }
+  .action-list .why::before { content: "→ "; color: var(--accent); font-weight: 600; }
+
+  .source {
+    text-align: center;
+    padding: 8px 0 44px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    font-size: 18px;
+    color: rgba(255,255,255,0.30);
+    line-height: 1.5;
+    letter-spacing: 0.5px;
+  }
+  .footer { text-align: center; padding: 24px 4px 0; border-top: 2px solid rgba(255,255,255,0.08); }
+  .footer .brand { font-size: 24px; font-weight: 800; color: rgba(255,255,255,0.22); letter-spacing: 5px; }
+  .footer .disclaimer { font-size: 18px; font-weight: 400; color: rgba(255,255,255,0.13); margin-top: 8px; }
+
+  .nav-fixed{display:none}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="grid-bg"></div>
+  <div class="glow"></div>
+  <div class="glow2"></div>
+  <div class="top-bar"></div>
+  <div class="container">
+    <div class="hero">
+      <h1>发酵菜里的活菌</h1>
+      <p class="flip">腌菜有活菌，但得<em>挑对、腌够、少吃</em></p>
+    </div>
+
+    <div class="why-card">
+      <div class="section-label">🧐 为什么</div>
+      <p>腌菜分两种。真发酵是乳酸菌把糖变乳酸，菜里留下大量活菌；假发酵是加醋腌的，基本没菌。真发酵有三坑：常温货架的多半灭菌或加防腐剂，活菌没了；亚硝酸盐腌满二十天才降回安全线；腌菜高盐，一小碟抵好几克盐。活菌到肠道还有争议，别当益生菌补剂。</p>
+    </div>
+
+    <div class="action-card">
+      <div class="section-label">💡 怎么做</div>
+      <ul class="action-list">
+        <li>
+          <div class="num">1</div>
+          <div class="body">
+            <div class="what">要活菌，去冷藏柜挑真发酵的</div>
+            <div class="why">常温货架的多半没活菌，挑冷藏短保、配料只有菜和盐的</div>
+          </div>
+        </li>
+        <li>
+          <div class="num">2</div>
+          <div class="body">
+            <div class="what">自家腌，腌够 20 天再吃</div>
+            <div class="why">第 5-10 天亚硝酸盐最高，20 天后落到安全线，急不得</div>
+          </div>
+        </li>
+        <li>
+          <div class="num">3</div>
+          <div class="body">
+            <div class="what">一小碟当咸菜，别当菜吃</div>
+            <div class="why">100 克泡菜约有 2 克盐，血压高的更得收着吃</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="source">
+      <div>香港消委会 2023 · 泡菜实测每克约2400万活菌，罐装灭菌后无活菌 ｜ GB 2762-2022 · 腌菜亚硝酸盐限值20mg/kg</div>
+      <div>Frontiers in Nutrition · 高盐腌菜与胃癌风险升高相关（26项队列） ｜ ISAPP共识 · 发酵食品不等于益生菌</div>
+    </div>
+
+    <div class="footer">
+      <div class="brand">李大妈的生活化养生笔记</div>
+      <div class="disclaimer">以上内容为学习随笔，不构成医学意见</div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
