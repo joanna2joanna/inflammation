@@ -1,6 +1,6 @@
 # 李大妈的生活化养生笔记
 
-小红书单页图文。每期一个日常痛点，中西医双视角 + 生活化行动。使用 `/inflammation` 制作新期。
+小红书单页图文。每期一个日常痛点，机制讲大白话 + 行动照着做。使用 `/inflammation` 制作新期。
 
 复习索引 `review.html` 按主题分类，点任意卡片开全屏查看器：左右箭头或键盘 ← → 翻页、底部缩略图跳转、右上角 🎲 随机抽一张、Esc 关闭。已部署：https://joanna2joanna.github.io/inflammation/review.html
 
