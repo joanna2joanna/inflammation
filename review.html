@@ -46,6 +46,31 @@
   .footer { text-align:center; margin-top:60px; padding-top:24px; border-top:2px solid var(--divider); }
   .footer .brand { font-size:20px; font-weight:800; color:#708098; letter-spacing:4px; }
   .footer .note { font-size:14px; color:#506580; margin-top:6px; }
+
+  /* —— 复习查看器 —— */
+  .viewer{position:fixed;inset:0;z-index:10000;background:rgba(13,24,44,.97);display:none;flex-direction:column}
+  .viewer.open{display:flex}
+  .viewer-top{display:flex;align-items:center;gap:12px;padding:12px 18px;flex-shrink:0}
+  .viewer-top .spacer{flex:1}
+  .viewer-count{color:var(--muted);font-size:15px;white-space:nowrap}
+  .viewer-hint{color:#3f5775;font-size:13px}
+  .viewer-btn{min-width:38px;height:38px;padding:0 12px;border-radius:19px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:var(--text);font-size:15px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;text-decoration:none;transition:background .15s;flex-shrink:0;line-height:1}
+  .viewer-btn:hover{background:rgba(255,255,255,.18)}
+  .viewer-stage{flex:1;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;min-height:0}
+  .viewer-img{max-width:100%;max-height:100%;object-fit:contain;border-radius:10px;box-shadow:0 0 60px rgba(0,0,0,.55);display:block}
+  .viewer-nav{position:absolute;top:50%;transform:translateY(-50%);z-index:2;width:54px;height:54px;border-radius:50%;background:rgba(212,168,83,.12);border:1px solid rgba(212,168,83,.45);color:var(--gold);font-size:32px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .15s;line-height:1;padding:0}
+  .viewer-nav:hover{background:rgba(212,168,83,.25)}
+  .viewer-nav.prev{left:18px}
+  .viewer-nav.next{right:18px}
+  .viewer-cap{text-align:center;padding:10px 20px 4px;flex-shrink:0}
+  .viewer-cap .title{color:var(--gold);font-weight:700;font-size:20px}
+  .viewer-cap .hook{color:var(--muted);font-size:15px;margin-top:3px}
+  .viewer-strip{display:flex;gap:8px;overflow-x:auto;padding:8px 20px 18px;flex-shrink:0;scrollbar-width:thin;scrollbar-color:#2E4565 transparent}
+  .viewer-thumb{width:84px;height:112px;flex-shrink:0;cursor:pointer;border-radius:8px;overflow:hidden;border:2px solid rgba(255,255,255,.12);background:var(--card);position:relative}
+  .viewer-thumb img{width:100%;height:100%;object-fit:cover;display:block}
+  .viewer-thumb:hover{border-color:rgba(255,255,255,.35)}
+  .viewer-thumb.on{border-color:var(--gold);box-shadow:0 0 12px rgba(212,168,83,.35)}
+  @media (max-width:760px){ .viewer-nav{width:44px;height:44px;font-size:26px} .viewer-hint{display:none} .viewer-thumb{width:63px;height:84px} }
 </style>
 </head>
 <body>
@@ -230,15 +255,97 @@
 
 <div class="footer">
     <div class="brand">李大妈的生活化养生笔记</div>
-    <div class="note">点击卡片可查看完整图文。按主题分类，同一类放在一起看，机制会串起来。</div>
+    <div class="note">点卡片开全屏查看器：左右箭头或 ← → 翻页，Esc 关闭，点下方缩略图可跳转。按主题分类，同一类放一起看，机制会串起来。</div>
   </div>
 </div>
+<!-- 复习查看器 -->
+  <div class="viewer" id="viewer">
+    <div class="viewer-top">
+      <span class="viewer-count" id="viewer-count">0 / 0</span>
+      <span class="viewer-hint">← → 翻页 · Esc 关闭 · 点缩略图跳转</span>
+      <span class="spacer"></span>
+      <button type="button" class="viewer-btn" id="viewer-rand" title="随机复习">🎲</button>
+      <a class="viewer-btn" id="viewer-open" href="#" target="_blank" rel="noopener" title="在新标签打开完整卡">↗ 完整卡</a>
+      <button type="button" class="viewer-btn" id="viewer-close" title="关闭">✕</button>
+    </div>
+    <div class="viewer-stage" id="viewer-stage">
+      <button type="button" class="viewer-nav prev" id="viewer-prev" title="上一张">‹</button>
+      <img class="viewer-img" id="viewer-img" alt="卡片大图">
+      <button type="button" class="viewer-nav next" id="viewer-next" title="下一张">›</button>
+    </div>
+    <div class="viewer-cap">
+      <div class="title" id="viewer-title"></div>
+      <div class="hook" id="viewer-hook"></div>
+    </div>
+    <div class="viewer-strip" id="viewer-strip"></div>
+  </div>
 <a id="back-to-top" href="#" title="回到顶部" style="position:fixed;bottom:28px;right:28px;z-index:9999;width:48px;height:48px;border-radius:50%;background:rgba(0,0,0,0.5);border:1px solid rgba(255,255,255,0.2);color:#fff;font-size:22px;cursor:pointer;display:none;align-items:center;justify-content:center;text-decoration:none;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);transition:background .2s;line-height:1">&uarr;</a>
 <script>
 (function(){
 var b=document.getElementById('back-to-top');
 window.addEventListener('scroll',function(){b.style.display=window.scrollY>400?'flex':'none'});
 b.addEventListener('click',function(e){e.preventDefault();window.scrollTo({top:0,behavior:'smooth'})});
+})();
+</script>
+<script>
+(function(){
+var cards=Array.prototype.slice.call(document.querySelectorAll('a.card'));
+var viewer=document.getElementById('viewer');
+var img=document.getElementById('viewer-img');
+var strip=document.getElementById('viewer-strip');
+var capTitle=document.getElementById('viewer-title'),capHook=document.getElementById('viewer-hook');
+var countEl=document.getElementById('viewer-count'),openBtn=document.getElementById('viewer-open');
+var idx=0,built=false;
+function imgSrc(href){return href.replace(/\.html$/,'.png')}
+cards.forEach(function(c,i){c.addEventListener('click',function(e){e.preventDefault();openAt(i)})});
+function buildStrip(){
+  built=true;
+  cards.forEach(function(c,i){
+    var t=document.createElement('div');t.className='viewer-thumb';
+    var im=document.createElement('img');im.src=imgSrc(c.getAttribute('href'));im.loading='lazy';
+    im.alt=c.querySelector('.title')?c.querySelector('.title').textContent:'';
+    t.appendChild(im);
+    t.addEventListener('click',function(){show(i)});
+    strip.appendChild(t);
+  });
+}
+function show(i){
+  idx=(i+cards.length)%cards.length;
+  var c=cards[idx];
+  img.src=imgSrc(c.getAttribute('href'));
+  var num=c.querySelector('.num'),title=c.querySelector('.title'),hook=c.querySelector('.hook');
+  capTitle.textContent=(num?num.textContent+' ':'')+(title?title.textContent:'');
+  capHook.textContent=hook?hook.textContent:'';
+  countEl.textContent=(idx+1)+' / '+cards.length;
+  openBtn.setAttribute('href',c.getAttribute('href'));
+  var thumbs=strip.children;
+  for(var k=0;k<thumbs.length;k++)thumbs[k].classList.toggle('on',k===idx);
+  if(thumbs[idx]&&thumbs[idx].scrollIntoView)thumbs[idx].scrollIntoView({inline:'center',block:'nearest'});
+}
+function next(){show(idx+1)}
+function prev(){show(idx-1)}
+function rand(){show(Math.floor(Math.random()*cards.length))}
+function openAt(i){
+  if(!built)buildStrip();
+  viewer.classList.add('open');
+  document.body.style.overflow='hidden';
+  show(i);
+}
+function close(){
+  viewer.classList.remove('open');
+  document.body.style.overflow='';
+  img.removeAttribute('src');
+}
+document.getElementById('viewer-close').addEventListener('click',close);
+document.getElementById('viewer-prev').addEventListener('click',prev);
+document.getElementById('viewer-next').addEventListener('click',next);
+document.getElementById('viewer-rand').addEventListener('click',rand);
+window.addEventListener('keydown',function(e){
+  if(!viewer.classList.contains('open'))return;
+  if(e.key==='ArrowRight'){next();e.preventDefault()}
+  else if(e.key==='ArrowLeft'){prev();e.preventDefault()}
+  else if(e.key==='Escape')close();
+});
 })();
 </script>
 </body>
