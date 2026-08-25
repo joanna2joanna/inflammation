@@ -1,4 +1,3 @@
 *.png
-!issues/*.png
 .DS_Store
 node_modules/

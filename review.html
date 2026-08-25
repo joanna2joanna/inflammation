@@ -57,7 +57,8 @@
   .viewer-btn{min-width:38px;height:38px;padding:0 12px;border-radius:19px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:var(--text);font-size:15px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;text-decoration:none;transition:background .15s;flex-shrink:0;line-height:1}
   .viewer-btn:hover{background:rgba(255,255,255,.18)}
   .viewer-stage{flex:1;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;min-height:0}
-  .viewer-img{max-width:100%;max-height:100%;object-fit:contain;border-radius:10px;box-shadow:0 0 60px rgba(0,0,0,.55);display:block}
+  .viewer-frame-wrap{width:1080px;flex-shrink:0;transform-origin:center center}
+  .viewer-frame{width:1080px;height:1548px;border:0;background:#223958;border-radius:10px;box-shadow:0 0 60px rgba(0,0,0,.55);display:block}
   .viewer-nav{position:absolute;top:50%;transform:translateY(-50%);z-index:2;width:54px;height:54px;border-radius:50%;background:rgba(212,168,83,.12);border:1px solid rgba(212,168,83,.45);color:var(--gold);font-size:32px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .15s;line-height:1;padding:0}
   .viewer-nav:hover{background:rgba(212,168,83,.25)}
   .viewer-nav.prev{left:18px}
@@ -66,11 +67,11 @@
   .viewer-cap .title{color:var(--gold);font-weight:700;font-size:20px}
   .viewer-cap .hook{color:var(--muted);font-size:15px;margin-top:3px}
   .viewer-strip{display:flex;gap:8px;overflow-x:auto;padding:8px 20px 18px;flex-shrink:0;scrollbar-width:thin;scrollbar-color:#2E4565 transparent}
-  .viewer-thumb{width:84px;height:112px;flex-shrink:0;cursor:pointer;border-radius:8px;overflow:hidden;border:2px solid rgba(255,255,255,.12);background:var(--card);position:relative}
-  .viewer-thumb img{width:100%;height:100%;object-fit:cover;display:block}
+  .viewer-thumb{--ts:0.0833;width:calc(1080px*var(--ts));height:calc(1548px*var(--ts));flex-shrink:0;cursor:pointer;border-radius:8px;overflow:hidden;border:2px solid rgba(255,255,255,.12);background:var(--card);position:relative}
   .viewer-thumb:hover{border-color:rgba(255,255,255,.35)}
   .viewer-thumb.on{border-color:var(--gold);box-shadow:0 0 12px rgba(212,168,83,.35)}
-  @media (max-width:760px){ .viewer-nav{width:44px;height:44px;font-size:26px} .viewer-hint{display:none} .viewer-thumb{width:63px;height:84px} }
+  .viewer-thumb iframe{width:1080px;height:1548px;border:0;pointer-events:none;transform-origin:0 0;transform:scale(var(--ts));display:block}
+  @media (max-width:760px){ .viewer-strip{--ts:0.0666} .viewer-nav{width:44px;height:44px;font-size:26px} .viewer-hint{display:none} }
 </style>
 </head>
 <body>
@@ -270,7 +271,7 @@
     </div>
     <div class="viewer-stage" id="viewer-stage">
       <button type="button" class="viewer-nav prev" id="viewer-prev" title="上一张">‹</button>
-      <img class="viewer-img" id="viewer-img" alt="卡片大图">
+      <div class="viewer-frame-wrap" id="viewer-frame-wrap"><iframe class="viewer-frame" id="viewer-frame" title="卡面"></iframe></div>
       <button type="button" class="viewer-nav next" id="viewer-next" title="下一张">›</button>
     </div>
     <div class="viewer-cap">
@@ -290,29 +291,47 @@ b.addEventListener('click',function(e){e.preventDefault();window.scrollTo({top:0
 <script>
 (function(){
 var cards=Array.prototype.slice.call(document.querySelectorAll('a.card'));
-var viewer=document.getElementById('viewer');
-var img=document.getElementById('viewer-img');
+var viewer=document.getElementById('viewer'),stage=document.getElementById('viewer-stage');
+var wrap=document.getElementById('viewer-frame-wrap'),frame=document.getElementById('viewer-frame');
 var strip=document.getElementById('viewer-strip');
 var capTitle=document.getElementById('viewer-title'),capHook=document.getElementById('viewer-hook');
 var countEl=document.getElementById('viewer-count'),openBtn=document.getElementById('viewer-open');
 var idx=0,built=false;
-function imgSrc(href){return href.replace(/\.html$/,'.png')}
+// 卡页高度不统一（老卡约1548，新卡1438），iframe 高度按内容自适应，避免底部被裁或露白
+// 量 body.offsetHeight：documentElement.scrollHeight 会被 iframe 内部视口撑大，量出来不对
+// 只给主 frame 的 wrap 设高（缩放居中要用）；缩略图的父框是 .viewer-thumb，高度走 CSS 的 --ts 缩放，不能覆盖
+function sizeFrame(f){
+  try{
+    var d=f.contentDocument;
+    if(!d||!d.body)return;
+    var h=Math.max(d.body.offsetHeight,d.body.scrollHeight,1438);
+    f.style.height=h+'px';
+    var p=f.parentElement;
+    if(p&&p.classList&&p.classList.contains('viewer-frame-wrap'))p.style.height=h+'px';
+  }catch(e){}
+}
 cards.forEach(function(c,i){c.addEventListener('click',function(e){e.preventDefault();openAt(i)})});
 function buildStrip(){
   built=true;
   cards.forEach(function(c,i){
     var t=document.createElement('div');t.className='viewer-thumb';
-    var im=document.createElement('img');im.src=imgSrc(c.getAttribute('href'));im.loading='lazy';
-    im.alt=c.querySelector('.title')?c.querySelector('.title').textContent:'';
-    t.appendChild(im);
+    var f=document.createElement('iframe');f.src=c.getAttribute('href');f.loading='lazy';f.tabIndex=-1;
+    f.addEventListener('load',function(){sizeFrame(f)});
+    t.appendChild(f);
     t.addEventListener('click',function(){show(i)});
     strip.appendChild(t);
   });
 }
+function autoScale(){
+  var h=parseInt(wrap.style.height)||1548;
+  var sc=Math.min((stage.clientWidth-150)/1080,(stage.clientHeight-30)/h);
+  return Math.min(Math.max(sc,0.15),1);
+}
+function applyScale(){wrap.style.transform='scale('+autoScale()+')'}
 function show(i){
   idx=(i+cards.length)%cards.length;
   var c=cards[idx];
-  img.src=imgSrc(c.getAttribute('href'));
+  frame.src=c.getAttribute('href');
   var num=c.querySelector('.num'),title=c.querySelector('.title'),hook=c.querySelector('.hook');
   capTitle.textContent=(num?num.textContent+' ':'')+(title?title.textContent:'');
   capHook.textContent=hook?hook.textContent:'';
@@ -330,12 +349,14 @@ function openAt(i){
   viewer.classList.add('open');
   document.body.style.overflow='hidden';
   show(i);
+  requestAnimationFrame(applyScale);
 }
 function close(){
   viewer.classList.remove('open');
   document.body.style.overflow='';
-  img.removeAttribute('src');
+  frame.src='about:blank';
 }
+frame.addEventListener('load',function(){if(viewer.classList.contains('open')){sizeFrame(frame);applyScale()}});
 document.getElementById('viewer-close').addEventListener('click',close);
 document.getElementById('viewer-prev').addEventListener('click',prev);
 document.getElementById('viewer-next').addEventListener('click',next);
@@ -346,6 +367,7 @@ window.addEventListener('keydown',function(e){
   else if(e.key==='ArrowLeft'){prev();e.preventDefault()}
   else if(e.key==='Escape')close();
 });
+window.addEventListener('resize',function(){if(viewer.classList.contains('open'))applyScale()});
 })();
 </script>
 </body>
